@@ -1,19 +1,24 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { HeadLineComponent } from './head-line/head-line.component';
-import { NavbarComponent } from './navbar/navbar.component';
 import { MainComponent } from './main/main.component';
+import { ToolsModule } from '../tools/tools.module';
+
+
 
 
 
 @NgModule({
   declarations: [
     HeadLineComponent,
-    NavbarComponent,
     MainComponent
   ],
   imports: [
-    CommonModule
-  ]
+    CommonModule,
+    ToolsModule
+
+
+  ],
+  exports: [HeadLineComponent, MainComponent]
 })
 export class MainModule { }

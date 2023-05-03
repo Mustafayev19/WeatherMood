@@ -1,1 +1,17 @@
-<p>head-line works!</p>
+<!-- Head-line -->
+<div
+    class="container w-full py-6 font-normalfont font-bold flex   text-color text-2xl leading-7 bg-gradient-to-l from-blue2 to-blue1 shadow-md shadow-blue3 rounded-lg whitespace-nowrap overflow-hidden ">
+    <!-- Icon -->
+    <div class="Icon flex justify-center items-center z-10 bg-blue1  pl-8">
+        <h1 class="rounded-2xl">WeatherMood</h1>
+        <img class="bg-blue1 rounded-2xl" src="assets/images/Icon.svg">
+    </div>
+    <!-- slide-container -->
+    <div class="container h-max w-full slide m-0 italic flex items-center">
+        <!-- Popular Cities weather -->
+        <ul *ngFor="let weather of cityWeather" class="inline-block mr-4 text-center mt-2">
+            <li>{{weather?.name}} <span class="text-yellow1">{{weather?.main?.temp}} °C</span></li>
+        </ul>
+    </div>
+
+</div>
