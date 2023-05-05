@@ -43,7 +43,9 @@ module.exports = {
       'blue3': '#85CDFD',
       'blue4': '#DEFCF9',
       'color': '#FFF9DE',
-      'yellow1': '#F7D060'
+      'yellow1': '#F7D060',
+      "textcolor": '#F5EBEB',
+
     },
   },
   extend: {

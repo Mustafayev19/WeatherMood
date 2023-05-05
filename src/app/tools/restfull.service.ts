@@ -3,16 +3,19 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 
 
+
 @Injectable({
   providedIn: 'root'
 })
 export class RestfullService {
-  apiUrl = "https://api.openweathermap.org/data/2.5/weather?";
-  apiKey = "&appid=d3b8ad277c2c71be34b7160eaa2f664c&units=metric"
-
+  apiUrl1 = "http://api.weatherapi.com/v1/current.json?"
+  apiKey1 = "&key=2005996eead74763a9b103614230505"
   constructor(private http: HttpClient) { }
 
-  getCityWeather(city: string): Observable<any> {
-    return this.http.get<any>(this.apiUrl + "q=" + city + this.apiKey);
+  getCityWeather1(city: string): Observable<any> {
+    return this.http.get<any>(this.apiUrl1 + "q=" + city + this.apiKey1);
   }
+
+
+
 }

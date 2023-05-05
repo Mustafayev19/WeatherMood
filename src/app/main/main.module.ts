@@ -8,6 +8,7 @@ import { ToolsModule } from '../tools/tools.module';
 
 
 
+
 @NgModule({
   declarations: [
     HeadLineComponent,
@@ -16,6 +17,7 @@ import { ToolsModule } from '../tools/tools.module';
   imports: [
     CommonModule,
     ToolsModule
+
 
 
   ],

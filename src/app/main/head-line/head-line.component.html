@@ -10,7 +10,7 @@
     <div class="container h-max w-full slide m-0 italic flex items-center">
         <!-- Popular Cities weather -->
         <ul *ngFor="let weather of cityWeather" class="inline-block mr-4 text-center mt-2">
-            <li>{{weather?.name}} <span class="text-yellow1">{{weather?.main?.temp}} °C</span></li>
+            <li>{{weather?.location.name}} <span class="text-yellow1">{{weather?.current.temp_c}} °C</span></li>
         </ul>
     </div>
 

@@ -1,1 +1,43 @@
-<p>main works!</p>
+<!-- Main-container -->
+<div class="container flex justify-center items-center mt-6 font-semibold text-xl leading-10 text-textcolor italic  ">
+    <!-- CurrentWeather -->
+    <div class=" w-8s/12 h-max grid grid-cols-2 font-headFont text brightness-120 border-collapse shadow-sm shadow-blue2 rounded-lg 
+        bg-gradient-to-b from-blue1 to-blue2 ">
+        <!-- City-Weather -->
+        <div class=" grid grid-rows-3 ">
+            <!-- name and temperature -->
+            <div class="flex justify-start items-center  pl-4 pt-2" [class.animate]="isAnimationActive">
+                <div class="grid grid-rows-2">
+                    <h1 class="text-2xl -tracking-tight">{{cityWeatherName}}<span
+                            class="pl-2  text-yellow1">{{cityWeatherTemp}} °C</span></h1>
+                    <span class="text-base">{{cityWeatherContry}}</span>
+                </div>
+            </div>
+            <!-- current weather condition -->
+            <div class="flex justify-start items-center pl-4" [class.animate]="isAnimationActive">
+                <h1>{{cityWeatherMain}}</h1>
+                <img src={{icon}}>
+            </div>
+            <!-- other important informations -->
+            <div class="grid grid-flow-col pl-4  " [class.animate]="isAnimationActive">
+                <h1 class="pr-2">Clauds: {{cityWeatherClouds}} %</h1>
+                <h1 class="pr-2">Windy: {{cityWeatherWindySpeed}} km/h</h1>
+                <h1 class="">Humidty: {{cityWeatherHumidity}}%</h1>
+            </div>
+        </div>
+        <!-- Input-field -->
+        <div class="grid grid-rows-2 relative ">
+            <!-- Input -->
+            <div class="grid grid-rows-2 p-2 right-0 absolute">
+
+                <input class="h-8 w-52 m-2" type="text" name="city" #city (keyup.enter)="getCityWeather(city.value)"
+                    placeholder="Get Weather for a City">
+                <label class="text-base"></label>
+            </div>
+            <!-- time -->
+            <div class="absolute bottom-10 right-2 " [class.animate]="isAnimationActive">
+                <span class="right-0 bottom-0">{{cityWeatherDate}}</span>
+            </div>
+        </div>
+    </div>
+</div>

@@ -23,8 +23,8 @@ export class HeadLineComponent implements OnInit {
 
   getPopularCitiesWeather(): void {
     for (let i = 0; i < this.popularCities.length; i++) {
-      this.restfullService.getCityWeather(this.popularCities[i]).subscribe(res => {
-        res.main.temp = Math.round(res.main.temp); // temperature değerini yuvarla
+      this.restfullService.getCityWeather1(this.popularCities[i]).subscribe(res => {
+        res.current.temp_c = Math.round(res.current.temp_c)
         this.cityWeather[i] = res;
       });
     }
