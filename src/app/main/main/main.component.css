@@ -1,7 +1,7 @@
-@keyframes text-slide {
+@keyframes animateUp {
     0% {
         opacity: 0;
-        transform: translateY(50%);
+        transform: translateY(30%);
     }
 
     100% {
@@ -10,6 +10,23 @@
     }
 }
 
-.animate {
-    animation: text-slide 1s 1
+@keyframes animateDown {
+    0% {
+        opacity: 0;
+        transform: translateY(-30%);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0%);
+    }
+}
+
+
+.animateUp {
+    animation: animateUp 800ms 1
+}
+
+.animateDown {
+    animation: animateDown 800ms 1
 }

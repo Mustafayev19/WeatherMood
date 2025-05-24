@@ -16,7 +16,7 @@ export class MainComponent implements OnInit {
   cityWeatherHumidity: number = 0;
   cityWeatherContry: string = 'Country';
   cityWeatherDate: number = 2023
-  isAnimationActive: boolean = false;
+  isAnimationActive!: boolean;
   icon: string = ""
 
 
@@ -25,7 +25,6 @@ export class MainComponent implements OnInit {
   ngOnInit(): void {
 
   }
-
 
 
   getCityWeather(event: string) {
@@ -45,5 +44,6 @@ export class MainComponent implements OnInit {
 
 
     })
+    this.isAnimationActive = false
   }
 }

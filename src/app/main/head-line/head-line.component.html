@@ -7,9 +7,9 @@
         <img class="bg-blue1 rounded-2xl" src="assets/images/Icon.svg">
     </div>
     <!-- slide-container -->
-    <div class="container h-max w-full slide m-0 italic flex items-center">
+    <div class="container h-max w-full slide m-0 italic flex items-center slide">
         <!-- Popular Cities weather -->
-        <ul *ngFor="let weather of cityWeather" class="inline-block mr-4 text-center mt-2">
+        <ul *ngFor="let weather of cityWeather" class="inline-block mr-4 text-center mt-2 ">
             <li>{{weather?.location.name}} <span class="text-yellow1">{{weather?.current.temp_c}} °C</span></li>
         </ul>
     </div>
