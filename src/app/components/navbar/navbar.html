@@ -1,0 +1,55 @@
+<header class="border-b border-white/20 overflow-hidden">
+  <div
+    class="container mx-auto flex items-center justify-between p-4 text-white"
+  >
+    <div class="flex items-center space-x-3 flex-shrink-0 pr-4">
+      <img
+        class="h-12 w-auto drop-shadow-md"
+        src="icons/Icon.svg"
+        alt="WeatherMood Logo"
+      />
+      <h1
+        class="text-xl font-bold tracking-wide [text-shadow:0_1px_3px_rgba(0,0,0,0.2)]"
+      >
+        {{ 'NAVBAR.TITLE' | translate }}
+      </h1>
+    </div>
+    <div
+      class="hidden lg:flex flex-grow w-full overflow-hidden relative h-8 items-center"
+    >
+      <div class="absolute whitespace-nowrap flex animate-slide">
+        @for(weather of popularCitiesWeather; track weather.location.name) {
+        <div class="inline-flex items-center mx-4">
+          <span>{{ weather.location.name }}</span>
+          <span class="ml-2 font-semibold">{{ weather.current.temp_c }}°C</span>
+        </div>
+        } @for(weather of popularCitiesWeather; track weather.location.name) {
+        <div class="inline-flex items-center mx-4">
+          <span>{{ weather.location.name }}</span>
+          <span class="ml-2 font-semibold">{{ weather.current.temp_c }}°C</span>
+        </div>
+        }
+      </div>
+    </div>
+
+    <div class="flex items-center space-x-2 border-l border-white/20 pl-4 ml-4">
+      <button
+        (click)="switchLang('az')"
+        [class.font-bold]="translate.currentLang === 'az'"
+        [class.opacity-50]="translate.currentLang !== 'az'"
+        class="transition-opacity hover:opacity-100 px-2"
+      >
+        AZ
+      </button>
+      <span class="opacity-50">/</span>
+      <button
+        (click)="switchLang('en')"
+        [class.font-bold]="translate.currentLang === 'en'"
+        [class.opacity-50]="translate.currentLang !== 'en'"
+        class="transition-opacity hover:opacity-100 px-2"
+      >
+        EN
+      </button>
+    </div>
+  </div>
+</header>

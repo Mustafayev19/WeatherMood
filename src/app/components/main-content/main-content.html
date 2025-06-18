@@ -1,0 +1,112 @@
+<div class="container mx-auto max-w-4xl">
+  <div
+    class="bg-white/20 backdrop-blur-2xl rounded-3xl shadow-xl overflow-hidden border border-white/30 text-white"
+  >
+    <div class="p-6 md:p-8">
+      <div class="flex flex-col sm:flex-row gap-3">
+        <input
+          class="w-full bg-white/20 border-2 border-transparent text-white placeholder:text-white/70 rounded-lg py-3 px-4 focus:outline-none focus:ring-2 focus:ring-white/50"
+          type="text"
+          [placeholder]="'MAIN.SEARCH_PLACEHOLDER' | translate"
+          [(ngModel)]="cityInput"
+          (keyup.enter)="searchWeather()"
+        />
+        <button
+          (click)="searchWeather()"
+          [disabled]="weatherService.isLoading()"
+          class="bg-amber-400 text-slate-900 font-bold rounded-lg px-6 py-3 hover:bg-amber-500 transition-all duration-300 shadow-md active:scale-95 disabled:bg-amber-300 disabled:cursor-not-allowed"
+        >
+          @if (weatherService.isLoading()) {
+          <span>{{ 'MAIN.SEARCHING_BUTTON' | translate }}</span>
+          } @else {
+          <span>{{ 'MAIN.SEARCH_BUTTON' | translate }}</span>
+          }
+        </button>
+      </div>
+    </div>
+
+    <div class="p-6 md:p-8 min-h-[300px] flex items-center justify-center">
+      @if (weatherService.weatherData(); as weather) { @defer {
+      <div
+        class="w-full grid grid-cols-1 md:grid-cols-2 gap-8 items-center [text-shadow:0_2px_4px_rgba(0,0,0,0.2)] opacity-0 animate-fade-in-up"
+        style="animation-delay: 150ms"
+      >
+        <div
+          class="flex flex-col items-center md:items-start text-center md:text-left"
+        >
+          <h2 class="text-4xl md:text-5xl font-bold">
+            {{ weather.location.name }}, {{ weather.location.country }}
+          </h2>
+          <p class="text-lg opacity-80 mt-1">
+            {{ weather.location.localtime }}
+          </p>
+          <div class="mt-6 flex flex-row items-start">
+            <span
+              class="bg-gradient-to-b from-white to-slate-200 bg-clip-text text-transparent text-7xl md:text-8xl font-extrabold tracking-tighter"
+            >
+              {{ weather.current.temp_c }}
+            </span>
+
+            <img
+              src="icons/celsius.svg"
+              alt="Celsius"
+              class="w-14 h-14 md:w-16 md:h-16 ml-1 mt-2"
+            />
+          </div>
+        </div>
+
+        <div class="flex flex-col items-center md:items-end">
+          <div class="flex flex-col items-center">
+            <img
+              class="w-32 h-32 md:w-40 md:h-40 drop-shadow-xl -mt-4"
+              [src]="weather.current.condition.icon"
+              alt="Weather Icon"
+            />
+            <p class="text-2xl font-semibold capitalize -mt-2">
+              {{ weather.current.condition.text }}
+            </p>
+          </div>
+          <div class="flex space-x-6 mt-6 text-center">
+            <div class="flex flex-col items-center">
+              <span class="font-bold text-xl"
+                >{{ weather.current.humidity }}%</span
+              ><span class="text-sm opacity-80"
+                >{{ 'MAIN.HUMIDITY' | translate }}</span
+              >
+            </div>
+            <div class="flex flex-col items-center">
+              <span class="font-bold text-xl"
+                >{{ weather.current.wind_mph }}<small>mph</small></span
+              ><span class="text-sm opacity-80"
+                >{{ 'MAIN.WIND' | translate }}</span
+              >
+            </div>
+            <div class="flex flex-col items-center">
+              <span class="font-bold text-xl">{{ weather.current.cloud }}%</span
+              ><span class="text-sm opacity-80"
+                >{{ 'MAIN.CLOUDS' | translate }}</span
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+      } @placeholder {
+      <div class="w-full h-48 bg-white/10 rounded-lg animate-pulse"></div>
+      } } @else if (weatherService.isLoading()) {
+      <div
+        class="animate-spin rounded-full h-16 w-16 border-b-4 border-white/80"
+      ></div>
+      } @else if (weatherService.error()) {
+      <div class="text-center text-red-300 bg-red-900/50 p-4 rounded-lg">
+        <h3 class="font-bold text-lg">{{ 'MAIN.ERROR_TITLE' | translate }}</h3>
+        <p>{{ weatherService.error() }}</p>
+      </div>
+      } @else {
+      <div class="text-center opacity-70">
+        <p>{{ 'MAIN.INITIAL_PROMPT_L1' | translate }}</p>
+        <p>{{ 'MAIN.INITIAL_PROMPT_L2' | translate }}</p>
+      </div>
+      }
+    </div>
+  </div>
+</div>

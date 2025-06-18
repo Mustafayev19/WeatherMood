@@ -1,0 +1,17 @@
+{
+  "NAVBAR": {
+    "TITLE": "WeatherMood"
+  },
+  "MAIN": {
+    "SEARCH_PLACEHOLDER": "Search for a city...",
+    "SEARCH_BUTTON": "Show",
+    "SEARCHING_BUTTON": "Searching...",
+    "HUMIDITY": "Humidity",
+    "WIND": "Wind",
+    "CLOUDS": "Clouds",
+    "INITIAL_PROMPT_L1": "To see the weather forecast,",
+    "INITIAL_PROMPT_L2": "search for a city.",
+    "ERROR_TITLE": "Error!",
+    "ERROR_MESSAGE": "City named {{city}} not found or an error occurred."
+  }
+}

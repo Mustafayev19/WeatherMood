@@ -1,0 +1,17 @@
+{
+  "NAVBAR": {
+    "TITLE": "WeatherMood"
+  },
+  "MAIN": {
+    "SEARCH_PLACEHOLDER": "Şəhər axtarın...",
+    "SEARCH_BUTTON": "Göstər",
+    "SEARCHING_BUTTON": "Axtarılır...",
+    "HUMIDITY": "Rütubət",
+    "WIND": "Külək",
+    "CLOUDS": "Buludluluq",
+    "INITIAL_PROMPT_L1": "Hava proqnozunu görmək üçün",
+    "INITIAL_PROMPT_L2": "şəhər axtarın.",
+    "ERROR_TITLE": "Xəta!",
+    "ERROR_MESSAGE": "{{city}} adlı şəhər tapılmadı və ya xəta baş verdi."
+  }
+}

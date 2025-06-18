@@ -1,0 +1,13 @@
+
+[build]
+  # Layihəni build etmək üçün Netlify-ın icra edəcəyi əmr
+  command = "ng build"
+  
+
+  publish = "dist/WeatherAppNew/browser/"
+
+
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200

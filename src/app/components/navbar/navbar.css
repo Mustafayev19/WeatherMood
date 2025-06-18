@@ -1,0 +1,12 @@
+/* ... @tailwind direktivlərindən sonra ... */
+@keyframes slide {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+.animate-slide {
+  animation: slide 40s linear infinite;
+}
