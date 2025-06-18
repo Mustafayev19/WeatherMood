@@ -1,11 +1,9 @@
 
 [build]
-  # Layihəni build etmək üçün Netlify-ın icra edəcəyi əmr
-  command = "ng build"
+
+  command = "node create-env.js && ng build"
   
-
   publish = "dist/WeatherAppNew/browser/"
-
 
 [[redirects]]
   from = "/*"
