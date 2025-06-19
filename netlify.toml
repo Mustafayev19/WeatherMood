@@ -1,9 +1,10 @@
 
 [build]
-
+  # Bu sətir düzgündür
   command = "node create-env.js && ng build"
-  
-  publish = "dist/WeatherAppNew/browser/"
+
+  publish = "dist/WeatherMood/browser/"
+
 
 [[redirects]]
   from = "/*"
