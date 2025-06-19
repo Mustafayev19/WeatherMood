@@ -1,5 +1,5 @@
 export const environment = {
   production: true,
   weatherApiUrl: 'https://api.weatherapi.com/v1/current.json',
-  weatherApiKey: 'YOUR_API_KEY_GOES_HERE',
+  weatherApiKey: '2005996eead74763a9b103614230505',
 };
