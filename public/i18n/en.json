@@ -3,6 +3,7 @@
     "TITLE": "WeatherMood"
   },
   "MAIN": {
+    "ERROR_FRIENDLY_TITLE": "Oops! We couldn't find that place",
     "SEARCH_PLACEHOLDER": "Search for a city...",
     "SEARCH_BUTTON": "Show",
     "SEARCHING_BUTTON": "Searching...",

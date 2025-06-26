@@ -3,6 +3,7 @@
     "TITLE": "WeatherMood"
   },
   "MAIN": {
+    "ERROR_FRIENDLY_TITLE": "Ups! Belə bir yer tapa bilmədik",
     "SEARCH_PLACEHOLDER": "Şəhər axtarın...",
     "SEARCH_BUTTON": "Göstər",
     "SEARCHING_BUTTON": "Axtarılır...",

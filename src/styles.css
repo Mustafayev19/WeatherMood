@@ -19,7 +19,6 @@
   }
 }
 
-/* 2. Həmin keyframe-ləri istifadə edən sinifləri yaradırıq */
 .animate-fade-in-up {
   animation: fade-in-up 0.7s ease-out forwards;
 }

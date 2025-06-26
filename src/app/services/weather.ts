@@ -29,7 +29,6 @@ export class WeatherService {
 
   constructor(private http: HttpClient, private translate: TranslateService) {}
 
-  // Main-content üçün tək şəhər axtarışı
   getCityWeather(city: string): void {
     if (!city) return;
     this.state.update((value) => ({ ...value, isLoading: true, error: null }));
@@ -67,7 +66,6 @@ export class WeatherService {
       .subscribe();
   }
 
-  // YENİLİK: Navbar üçün bir neçə şəhərin məlumatını gətirən metod
   getPopularCitiesWeather(cities: string[]): Observable<WeatherResponse[]> {
     const requests = cities.map((city) =>
       this.http
@@ -77,7 +75,7 @@ export class WeatherService {
             ...res,
             current: { ...res.current, temp_c: Math.round(res.current.temp_c) },
           })),
-          catchError((err) => of(null)) // Əgər biri xəta versə, digərləri gəlməyə davam etsin
+          catchError((err) => of(null))
         )
     );
     return forkJoin(requests).pipe(

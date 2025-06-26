@@ -1,6 +1,6 @@
 <div class="container mx-auto max-w-4xl">
   <div
-    class="bg-white/20 backdrop-blur-2xl rounded-3xl shadow-xl overflow-hidden border border-white/30 text-white"
+    class="bg-white/10 backdrop-blur-2xl rounded-3xl shadow-xl overflow-hidden border border-white/30 text-white"
   >
     <div class="p-6 md:p-8">
       <div class="flex flex-col sm:flex-row gap-3">
@@ -46,7 +46,6 @@
             >
               {{ weather.current.temp_c }}
             </span>
-
             <img
               src="icons/celsius.svg"
               alt="Celsius"
@@ -97,9 +96,18 @@
         class="animate-spin rounded-full h-16 w-16 border-b-4 border-white/80"
       ></div>
       } @else if (weatherService.error()) {
-      <div class="text-center text-red-300 bg-red-900/50 p-4 rounded-lg">
-        <h3 class="font-bold text-lg">{{ 'MAIN.ERROR_TITLE' | translate }}</h3>
-        <p>{{ weatherService.error() }}</p>
+      <div
+        class="flex flex-col items-center justify-center text-center gap-4 opacity-0 animate-fade-in-up"
+      >
+        <img
+          class="w-24 h-24 text-white opacity-70"
+          alt="not found icon"
+          src="icons/not-found.svg"
+        />
+        <h3 class="font-bold text-2xl text-white">
+          {{ 'MAIN.ERROR_FRIENDLY_TITLE' | translate }}
+        </h3>
+        <p class="text-white/70">{{ weatherService.error() }}</p>
       </div>
       } @else {
       <div class="text-center opacity-70">

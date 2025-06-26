@@ -12,9 +12,8 @@ import { TranslateService } from '@ngx-translate/core';
 export class App {
   protected title = 'WeatherMood';
   constructor(private translate: TranslateService) {
-    // Hansı dillərin mövcud olduğunu bildiririk
-    translate.addLangs(['az', 'en']);
-    // Standart dili təyin edirik
-    translate.setDefaultLang('az');
+    this.translate.addLangs(['az', 'en']);
+
+    this.translate.setDefaultLang('en');
   }
 }
